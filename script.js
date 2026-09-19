@@ -1,41 +1,9 @@
 // Student Attendance System
 // All data is saved in the browser using localStorage (no server needed).
 
-// ---------- Storage keys ----------
-var STUDENTS_KEY = "attendanceApp.students";
-var ATTENDANCE_KEY = "attendanceApp.attendance";
-
-// ---------- Data ----------
-// students: a list like [{ roll: "001", name: "Ali Khan", sample: true }]
-var students = [];
-
-// attendance: an object grouped by date, like
-// { "2026-01-15": { "001": "Present", "002": "Absent" } }
-var attendance = {};
-
-// ---------- Page elements ----------
-var studentForm = document.getElementById("student-form");
-var rollInput = document.getElementById("roll-input");
 var attendanceMessage = document.getElementById("attendance-message");
 var attendanceBody = document.getElementById("attendance-body");
-var emptyMessage = document.getElementById("empty-message");
-var sampleNotice = document.getElementById("sample-notice");
-var statTotal = document.getElementById("stat-total");
-var statPresent = document.getElementById("stat-present");
-var statAbsent = document.getElementById("stat-absent");
-var statPercentage = document.getElementById("stat-percentage");
-
-// ---------- Sample data (only used the first time the app opens) ----------
-function getSampleStudents() {
-  return [
-    { roll: "001", name: "Ali Khan", sample: true },
-    { roll: "002", name: "Ahmed Raza", sample: true },
-    { roll: "003", name: "Sara Ahmed", sample: true },
-    { roll: "004", name: "Hamza Malik", sample: true },
-    { roll: "005", name: "Ayesha Noor", sample: true }
-  ];
-}
-
+va
 // ---------- Saving and loading ----------
 function saveData() {
   try {
