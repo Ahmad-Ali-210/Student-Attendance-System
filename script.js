@@ -16,10 +16,6 @@ var attendance = {};
 // ---------- Page elements ----------
 var studentForm = document.getElementById("student-form");
 var rollInput = document.getElementById("roll-input");
-var nameInput = document.getElementById("name-input");
-var dateInput = document.getElementById("date-input");
-var searchInput = document.getElementById("search-input");
-var formMessage = document.getElementById("form-message");
 var attendanceMessage = document.getElementById("attendance-message");
 var attendanceBody = document.getElementById("attendance-body");
 var emptyMessage = document.getElementById("empty-message");
