@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header and navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Student Attendance System</h1>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#add-student">Add Student</a>
+        <a href="#attendance">Attendance</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Shown only while sample students exist -->
+    <div id="sample-notice" class="notice" hidden>
+      <strong>Sample data:</strong>
+      The students marked "Sample" are example records so you can test the app.
+      Delete them and add your own students whenever you like.
+    </div>
+
+    <!-- Statistics cards -->
+    <section id="dashboard" aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title" class="section-title">Dashboard</h2>
+      <p class="section-hint">Statistics for the date selected below.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Total Students</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-card stat-present">
+          <span class="stat-label">Present</span>
+          <span class="stat-value" id="stat-present">0</span>
+        </div>
+        <div class="stat-card stat-absent">
+          <span class="stat-label">Absent</span>
+          <span class="stat-value" id="stat-absent">0</span>
+        </div>
+        <div class="stat-card stat-percent">
+          <span class="stat-label">Attendance Percentage</span>
+          <span class="stat-value" id="stat-percentage">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add student form -->
+    <section id="add-student" class="panel" aria-labelledby="add-title">
+      <h2 id="add-title" class="section-title">Add a student</h2>
+
+      <form id="student-form" class="student-form" novalidate>
+        <div class="field">
+          <label for="roll-input">Roll number</label>
+          <input type="text" id="roll-input" maxlength="20" placeholder="e.g. 006" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="name-input">Student name</label>
+          <input type="text" id="name-input" maxlength="50" placeholder="e.g. Bilal Hussain" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Add student</button>
+      </form>
+
+      <p id="form-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- Attendance table -->
+    <section id="attendance" class="panel" aria-labelledby="attendance-title">
+      <h2 id="attendance-title" class="section-title">Attendance</h2>
+
+      <div class="controls">
+        <div class="field">
+          <label for="date-input">Attendance date</label>
+          <input type="date" id="date-input">
+        </div>
+        <div class="field field-grow">
+          <label for="search-input">Search by name or roll number</label>
+          <input type="search" id="search-input" placeholder="Type to search..." autocomplete="off">
+        </div>
+      </div>
+
+      <p id="attendance-message" class="message" role="alert"></p>
+
+      <div class="table-wrapper">
+        <table id="attendance-table">
+          <thead>
+            <tr>
+              <th>Roll Number</th>
+              <th>Student Name</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="attendance-body">
+            <!-- Rows are added by script.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="empty-message" class="empty-message" hidden></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Student Attendance System &middot; Data is saved in this browser only.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
